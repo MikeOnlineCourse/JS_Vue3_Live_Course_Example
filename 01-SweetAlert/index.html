@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./sweetalert.css" />
+  </head>
+  <body>
+    <button id="btn">Alert Click</button>
+
+    <button id="btn2">show log</button>
+
+    <!-- <div class="sw_bg">
+      <div class="sw_mid">
+        <div class="sw_content">
+          <p></p>
+          <button>ok</button>
+        </div>
+      </div>
+    </div> -->
+
+    <script type="module">
+      import SweetAlert from "./sweetAlert.js";
+
+      const sw = new SweetAlert();
+      const btn = document.getElementById("btn");
+      const btn2 = document.getElementById("btn2");
+      btn.addEventListener("click", () => {
+        sw.open("Hello world").then((res) => {
+          console.log("ok");
+        });
+      });
+      btn2.addEventListener("click", () => {
+        sw.open("text");
+      });
+    </script>
+  </body>
+</html>
