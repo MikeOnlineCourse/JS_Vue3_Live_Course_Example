@@ -31,7 +31,6 @@ GET https://api.github.com/users/{username}
 | updated_at  | String | 最新一次更新github的時間 |
 
 <br/>
-<br/>
 
 ### 取得 user 公開 repo 列表 [Repos API 文件連結](https://docs.github.com/cn/rest/reference/repos)
 ```
