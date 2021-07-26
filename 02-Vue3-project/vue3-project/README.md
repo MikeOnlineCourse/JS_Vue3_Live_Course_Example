@@ -58,7 +58,7 @@ GET https://api.github.com/users/{username}/repos?page=${page}&per_page=${per_pa
 ### 偵測卷軸到底部
 ```
 const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-if (scrollTop + clientHeight > scrollHeight) {
+if (scrollTop + clientHeight >= scrollHeight) {
    console.log("到底了");
 }
 ```

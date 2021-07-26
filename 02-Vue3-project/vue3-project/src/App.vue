@@ -1,26 +1,42 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
-</template>
-
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
+import { defineComponent, provide } from "vue";
+import TitleBar from "@/components/TitleBar.vue";
+import ReposList from "@/components/ReposList.vue";
+import store from "@/composition-api/store.js";
+export default defineComponent({
   name: "App",
   components: {
-    HelloWorld,
+    TitleBar,
+    ReposList,
   },
-};
+  setup() {
+    provide("mapStore", store);
+    return {};
+  },
+});
 </script>
 
+<template>
+  <TitleBar />
+  <ReposList />
+</template>
+
 <style lang="scss">
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color: #ddd;
+  padding-bottom: 20px;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 160px;
 }
 </style>
