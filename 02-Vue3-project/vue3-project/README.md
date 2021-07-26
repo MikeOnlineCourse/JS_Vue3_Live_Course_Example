@@ -52,3 +52,13 @@ GET https://api.github.com/users/{username}/repos?page=${page}&per_page=${per_pa
 | page  | Number | 目前的頁碼 |
 | per_page  | Number | 一頁幾個項目，最多100個 |
 | sort  | string | 排序方式 created、updated、pushed、full_name  |
+
+<br/>
+
+### 偵測卷軸到底部
+```
+const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+if (scrollTop + clientHeight > scrollHeight) {
+   console.log("到底了");
+}
+```
