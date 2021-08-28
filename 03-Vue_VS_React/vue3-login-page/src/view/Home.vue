@@ -1,9 +1,9 @@
 <script>
   import { inject } from 'vue';
-  import LoginPage from '../components/LoginPage.vue';
+  import RegisterPage from '../components/RegisterPage.vue';
   export default {
     components: {
-      LoginPage,
+      RegisterPage,
     },
     setup() {
       const { isRegister } = inject('mapStore');
@@ -12,7 +12,7 @@
   };
 </script>
 <template>
-  <LoginPage v-if="!isRegister" />
+  <RegisterPage v-if="!isRegister" />
   <div v-else>
     <h1>註冊成功</h1>
   </div>

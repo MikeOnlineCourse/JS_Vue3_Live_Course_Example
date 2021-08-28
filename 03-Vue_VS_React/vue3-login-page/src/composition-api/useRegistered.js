@@ -5,7 +5,7 @@ export function useRegistered() {
   const isSubmit = ref(false);
   const errorMessage = reactive({});
 
-  const submitLogin = async registered => {
+  const submitRegister = async registered => {
     if (isSubmit.value) return;
     isSubmit.value = true;
     try {
@@ -24,5 +24,5 @@ export function useRegistered() {
     }
   };
 
-  return { isSubmit, submitLogin, errorMessage };
+  return { isSubmit, submitRegister, errorMessage };
 }

@@ -3,7 +3,7 @@
   import { useRegistered } from '../composition-api/useRegistered.js';
   export default {
     setup() {
-      const { isSubmit, submitLogin, errorMessage } = useRegistered();
+      const { isSubmit, submitRegister, errorMessage } = useRegistered();
 
       const registered = reactive({
         username: '',
@@ -14,7 +14,7 @@
 
       const handleSubmit = () => {
         if (!registered.terms) return alert('請勾選我已閱讀使用者條款');
-        submitLogin(registered);
+        submitRegister(registered);
       };
 
       return { registered, handleSubmit, errorMessage, isSubmit };
