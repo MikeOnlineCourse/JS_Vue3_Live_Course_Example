@@ -1,4 +1,4 @@
-# vue3-demo
+# 用Vue3做一個登入視窗
 
 ## Project setup
 ```
@@ -14,11 +14,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
