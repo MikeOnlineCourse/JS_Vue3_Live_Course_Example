@@ -1,6 +1,4 @@
 <script>
-  import { provide } from 'vue';
-  import { useStore } from './composition-api/useStore.js';
   import Home from './view/Home.vue';
   export default {
     name: 'App',
@@ -8,7 +6,6 @@
       Home,
     },
     setup() {
-      provide('mapStore', useStore());
       return {};
     },
   };
