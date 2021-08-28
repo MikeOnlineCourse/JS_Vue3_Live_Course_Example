@@ -19,7 +19,9 @@ export function useRegistered() {
   };
 
   const errorHandle = err => {
-    Object.keys(err).forEach(key => (errorMessage[key] = err[key]));
+    for (const key in err) {
+      errorMessage[key] = err[key];
+    }
   };
 
   return { isSubmit, submitLogin, errorMessage };
