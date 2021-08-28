@@ -1,14 +1,14 @@
 import { ref } from 'vue';
 
 export function useStore() {
-  const isReg = ref(false);
+  const isRegister = ref(false);
 
-  const handleReg = bool => {
-    isReg.value = bool;
+  const handleRegisterPage = bool => {
+    isRegister.value = bool;
   };
 
   return {
-    isReg,
-    handleReg,
+    isRegister,
+    handleRegisterPage,
   };
 }

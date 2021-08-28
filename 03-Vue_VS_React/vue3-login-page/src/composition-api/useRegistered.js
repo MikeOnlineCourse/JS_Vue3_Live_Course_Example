@@ -1,7 +1,7 @@
 import { ref, reactive, inject } from 'vue';
 import axios from 'axios';
 export function useRegistered() {
-  const { handleReg } = inject('mapStore');
+  const { handleRegisterPage } = inject('mapStore');
   const isSubmit = ref(false);
   const errorMessage = reactive({});
 
@@ -11,7 +11,7 @@ export function useRegistered() {
     try {
       await axios.post('https://vue-lessons-api.herokuapp.com/auth/registered', registered);
       isSubmit.value = false;
-      handleReg(true);
+      handleRegisterPage(true);
     } catch (error) {
       errorHandle(error.response.data.error_message);
       isSubmit.value = false;

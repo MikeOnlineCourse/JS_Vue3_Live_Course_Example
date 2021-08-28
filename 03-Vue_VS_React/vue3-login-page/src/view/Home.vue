@@ -6,13 +6,13 @@
       LoginPage,
     },
     setup() {
-      const { isReg } = inject('mapStore');
-      return { isReg };
+      const { isRegister } = inject('mapStore');
+      return { isRegister };
     },
   };
 </script>
 <template>
-  <LoginPage v-if="!isReg" />
+  <LoginPage v-if="!isRegister" />
   <div v-else>
     <h1>註冊成功</h1>
   </div>
