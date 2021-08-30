@@ -1,0 +1,6 @@
+.error:empty {
+  display: none;
+}
+.error {
+  color: red;
+}
