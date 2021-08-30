@@ -18,7 +18,7 @@
       <p>PASSWORD</p>
       <input type="password" placeholder="輸入密碼" />
       <p class="error">
-        {{ 輸入密碼 }}
+        輸入密碼
       </p>
     </div>
 
