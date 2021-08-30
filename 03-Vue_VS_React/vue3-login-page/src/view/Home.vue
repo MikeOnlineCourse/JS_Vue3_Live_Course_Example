@@ -7,6 +7,7 @@
     },
     setup() {
       const { isRegister } = inject('mapStore');
+
       return { isRegister };
     },
   };

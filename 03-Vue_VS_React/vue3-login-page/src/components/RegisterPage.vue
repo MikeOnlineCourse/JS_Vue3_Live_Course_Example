@@ -1,23 +1,10 @@
 <script>
-  import { reactive } from 'vue';
   import { useRegistered } from '../composition-api/useRegistered.js';
   export default {
     setup() {
-      const { isSubmit, submitRegister, errorMessage } = useRegistered();
+      const { userData, errorMsg, isCheck, handleSubmit, isSubmit } = useRegistered();
 
-      const registered = reactive({
-        username: '',
-        password: '',
-        email: '',
-        terms: false,
-      });
-
-      const handleSubmit = () => {
-        if (!registered.terms) return alert('請勾選我已閱讀使用者條款');
-        submitRegister(registered);
-      };
-
-      return { registered, handleSubmit, errorMessage, isSubmit };
+      return { userData, isCheck, handleSubmit, errorMsg, isSubmit };
     },
   };
 </script>
@@ -26,34 +13,28 @@
     <img class="logo" src="../assets/logo.png" alt="" />
     <div class="input-box">
       <p>NAME</p>
-      <input type="text" placeholder="輸入使用者名稱" v-model="registered.username" />
-      <p v-if="errorMessage.username" class="error">
-        {{ errorMessage.username }}
-      </p>
+      <input type="text" placeholder="輸入使用者名稱" v-model="userData.username" />
+      <p class="error" v-if="errorMsg.username">{{ errorMsg.username }}</p>
     </div>
 
     <div class="input-box">
       <p>PASSWORD</p>
-      <input type="password" placeholder="輸入密碼" v-model="registered.password" />
-      <p v-if="errorMessage.password" class="error">
-        {{ errorMessage.password }}
-      </p>
+      <input type="password" placeholder="輸入密碼" v-model="userData.password" />
+      <p class="error" v-if="errorMsg.password">{{ errorMsg.password }}</p>
     </div>
 
     <div class="input-box">
       <p>E-MAIL</p>
-      <input type="text" placeholder="輸入email" v-model="registered.email" />
-      <p v-if="errorMessage.email" class="error">
-        {{ errorMessage.email }}
-      </p>
+      <input type="text" placeholder="輸入email" v-model="userData.email" />
+      <p class="error" v-if="errorMsg.email">{{ errorMsg.email }}</p>
     </div>
 
     <div class="input-box">
-      <input type="checkbox" id="checkbox" v-model="registered.terms" />
+      <input type="checkbox" id="checkbox" v-model="isCheck" />
       <label for="checkbox">我已閱讀使用者條款</label>
     </div>
 
-    <button :class="['btn', { disabled: isSubmit }]" :disabled="isSubmit" @click="handleSubmit">
+    <button :class="['btn', { disabled: isSubmit }]" @click="handleSubmit">
       {{ isSubmit ? 'Loading...' : '送出' }}
     </button>
   </div>
