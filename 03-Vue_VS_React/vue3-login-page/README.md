@@ -1,16 +1,11 @@
 # 用Vue3做一個登入視窗
 
-## Project setup
+## 註冊 API
 ```
-npm install
+POST https://vue-lessons-api.herokuapp.com/auth/registered
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
+| 欄位  | type | 說明 |
+| :--  | :-- | :-- |
+| username  | String | 名稱 |
+| password  | String | 密碼 |
+| email  | String | 信箱 |

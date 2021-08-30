@@ -1,1 +1,1 @@
-// https://vue-lessons-api.herokuapp.com/auth/registered
+const REGISTER_URL = 'https://vue-lessons-api.herokuapp.com/auth/registered';
